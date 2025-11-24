@@ -1,0 +1,115 @@
+@use "vars";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: vars.$headerBg;
+  color: vars.$headerText;
+  transition: var(--transition);
+  z-index: 100;
+  height: 3em;
+
+  @media (max-width: 768px) {
+    height: 2em;
+  }
+
+  // ===================================================================
+  // ESTADOS DINÂMICOS DO HEADER
+  // ===================================================================
+
+  // Estado transparente - na seção hero
+  &--transparent {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
+  // Estado visível - fora da seção hero
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    background-color: vars.$headerBg;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  // ===================================================================
+  // ELEMENTOS DO HEADER
+  // ===================================================================
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: var(--space-3xs) var(--space-s);
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      padding: var(--space-3xs) var(--space-xs);
+    }
+  }
+
+  img {
+    max-height: calc(3em - 2 * var(--space-3xs) - 4px);
+    height: 100%;
+    width: auto;
+  }
+
+  a {
+    font-family: vars.$heading;
+    color: vars.$headerText;
+  }
+
+  &__logo {
+    max-width: 5em;
+    width: 100%;
+    height: calc(3em - 2 * var(--space-3xs) - 4px);
+    margin: 0;
+    transition: all 0.5s ease;
+
+    @media (max-width: 768px) {
+      max-width: 4em;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--space-xs);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2xs);
+    font-family: vars.$heading;
+    color: vars.$headerText;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid vars.$headerHover;
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: vars.$headerHover;
+      color: vars.$headerBg;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      font-size: var(--font--1);
+      padding: var(--space-3xs);
+    }
+  }
+}

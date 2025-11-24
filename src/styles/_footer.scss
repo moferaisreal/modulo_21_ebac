@@ -1,0 +1,159 @@
+@use "vars";
+.footer {
+  background-color: vars.$mainSection;
+  color: vars.$headerText;
+  font-family: vars.$text;
+  padding: var(--space-m) var(--space-l);
+  transition: var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-l);
+
+  /* ========== FOOTER SECTIONS ========== */
+  &__section {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: var(--space-s);
+
+    /* ---------- LANGUAGES ---------- */
+    &--languages {
+      .footer__button {
+        background: transparent;
+        border: 1px solid vars.$borders;
+        color: vars.$headerText;
+        padding: var(--space-xs) var(--space-s);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: var(--transition);
+
+        &:hover {
+          background-color: vars.$headerHover;
+          color: vars.$mainBlack;
+          transform: scale(1.05);
+        }
+      }
+
+      .footer__dropdown {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        background-color: vars.$mainBg;
+        border: 1px solid vars.$borders;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        min-width: 160px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: var(--transition);
+        overflow: hidden;
+
+        &--active {
+          display: flex;
+          opacity: 1;
+          transform: translateY(0);
+          animation: dropdown-slide 0.3s ease forwards;
+        }
+
+        .footer__language {
+          padding: var(--space-xs);
+          color: vars.$mainText;
+          background: transparent;
+          border: none;
+          text-align: left;
+          width: 100%;
+          cursor: pointer;
+          transition: var(--transition);
+
+          &:hover {
+            background-color: vars.$buttons;
+            color: vars.$mainBlack;
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+
+    /* ---------- SOCIAL MEDIA ---------- */
+    &--social {
+      display: flex;
+      gap: var(--space-m);
+
+      .footer__icon {
+        color: vars.$buttons;
+        font-size: var(--font-1);
+        transition: var(--transition);
+
+        &:hover {
+          color: vars.$headerHover;
+          transform: scale(1.15);
+          animation: icon-fade 0.3s ease;
+        }
+      }
+    }
+
+    /* ---------- CONTACT BUTTON ---------- */
+    &--contact {
+      .footer__contact-btn {
+        background-color: vars.$buttons;
+        color: vars.$mainBlack;
+        border: none;
+        padding: var(--space-xs) var(--space-m);
+        border-radius: 4px;
+        font-family: vars.$heading;
+        cursor: pointer;
+        transition: var(--transition);
+
+        &:hover {
+          background-color: vars.$headerHover;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-m);
+
+    &__section {
+      flex-direction: column;
+    }
+  }
+}
+
+/* ========== KEYFRAMES ========== */
+@keyframes dropdown-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes icon-fade {
+  from {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}

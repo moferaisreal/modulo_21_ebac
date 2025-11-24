@@ -1,0 +1,97 @@
+@use "vars";
+@use "header";
+@use "hero";
+@use "timeline";
+@use "weapons";
+@use "ringbearers";
+@use "heroes";
+@use "footer";
+
+// ===================================================================
+// FLUID TYPOGRAPHY SYSTEM
+// Building responsive typography that scales smoothly across devices
+// ===================================================================
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  line-height: 1.7;
+  @media (max-width: 768px) {
+    line-height: 1.5;
+  }
+}
+
+body {
+  background-color: vars.$mainBg;
+  font-size: var(--font-0);
+  font-family: vars.$text;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.5em;
+  font-size: var(--font--3);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-s);
+  letter-spacing: 1px;
+  border: var(--space-3xs) solid vars.$headerHover;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 2em;
+  white-space: nowrap;
+
+  &:hover {
+    color: vars.$headerHover;
+    border-color: vars.$headerText;
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  &--primary {
+    background-color: vars.$buttons;
+    color: vars.$headerText;
+    &:hover {
+      background-color: vars.$headerHover;
+    }
+  }
+  &--secondary {
+    background-color: vars.$borders;
+    &:hover {
+      background-color: vars.$headerHover;
+    }
+  }
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: var(--space-xs) var(--space-s);
+  font-size: var(--font-0);
+  border: none;
+  border-radius: 5px;
+  background-color: vars.$buttons;
+  color: vars.$headerText;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  &:hover {
+    background-color: vars.$headerHover;
+  }
+}

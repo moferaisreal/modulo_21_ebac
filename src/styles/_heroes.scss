@@ -1,0 +1,141 @@
+@use "vars";
+
+.heroes {
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-l) var(--space-m);
+  overflow-x: hidden;
+
+  &__content {
+    max-width: clamp(320px, 90vw, 1200px);
+    width: 100%;
+    text-align: center;
+    background: vars.$mainBg;
+    border-radius: 8px;
+    padding: var(--space-s);
+    box-shadow: 0 var(--space-3xs) var(--space-2xs) 8px vars.$mainBlack;
+
+    &-title {
+      font-family: vars.$heading;
+      color: vars.$mainSection;
+      font-size: clamp(var(--font-2), 4vw, var(--font-3));
+      margin-bottom: var(--space-xs-s);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    &-description {
+      font-family: vars.$cursive;
+      color: vars.$mainText;
+      font-size: clamp(var(--font-0), 2.5vw, var(--font-2));
+      margin-bottom: var(--space-l-xl);
+      font-style: italic;
+      line-height: 1.6;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-l);
+    perspective: 1000px;
+  }
+
+  &__card {
+    position: relative;
+    height: 350px;
+    background: transparent;
+    perspective: inherit;
+    border: 1px solid vars.$borders;
+    border-radius: var(--space-2xs);
+    transition: var(--transition);
+
+    &-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+
+      &:hover {
+        transform: rotateY(180deg);
+      }
+    }
+
+    &-front,
+    &-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(vars.$mainBlack, 0.1);
+      transition: var(--transition);
+    }
+
+    &-front {
+      background: #fff;
+      border: 2px solid vars.$frames;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .heroes__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+
+        &:hover {
+          scale: 1.05;
+        }
+      }
+    }
+
+    &-back {
+      background-color: vars.$mainSection;
+      color: vars.$headerText;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-m);
+      font-family: vars.$text;
+
+      .heroes__title {
+        font-family: vars.$heading;
+        font-size: var(--font-1);
+        margin-bottom: var(--space-xs);
+        color: vars.$buttons;
+      }
+
+      .heroes__description {
+        font-size: var(--font-0);
+        line-height: 1.5;
+        color: vars.$headerText;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__card {
+      height: 280px;
+
+      &-back {
+        padding: var(--space-s);
+
+        .heroes__title {
+          font-size: var(--font-1);
+        }
+
+        .heroes__description {
+          font-size: var(--font--1);
+        }
+      }
+    }
+  }
+}

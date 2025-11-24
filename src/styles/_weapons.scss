@@ -1,0 +1,188 @@
+@use "vars";
+
+.armas {
+  padding: var(--space-m);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Container principal
+  &__content {
+    max-width: clamp(320px, 90vw, 1200px);
+    width: 100%;
+    text-align: center;
+    background: vars.$mainBg;
+    border-radius: 8px;
+    padding: var(--space-s);
+    box-shadow: 0 var(--space-3xs) var(--space-2xs) 8px vars.$mainBlack;
+
+    &_title {
+      font-family: vars.$heading;
+      color: vars.$mainSection;
+      font-size: clamp(var(--font-2), 4vw, var(--font-3));
+      margin-bottom: var(--space-xs-s);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    &_text {
+      font-family: vars.$cursive;
+      color: vars.$mainText;
+      font-size: clamp(var(--font-0), 2.5vw, var(--font-2));
+      margin-bottom: var(--space-l-xl);
+      font-style: italic;
+      line-height: 1.6;
+    }
+  }
+
+  // Lista de items
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-m) 0 0;
+  }
+
+  // Item individual do accordion
+  &__item {
+    border: 1px solid vars.$headerText;
+    border-radius: 8px;
+    margin-bottom: var(--space-xs-s);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px vars.$mainBlack;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // Modificador para item ativo
+    &--active {
+      .armas__header {
+        background-color: vars.$mainCallout;
+        border-bottom: 1px solid vars.$borders;
+      }
+
+      .armas__header-btn svg {
+        transform: rotate(45deg);
+      }
+
+      .armas__panel {
+        max-height: 1500px;
+        opacity: 1;
+        padding: var(--space-m-l);
+      }
+    }
+  }
+
+  // Cabeçalho do accordion (clicável)
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-m) var(--space-m-l);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: vars.$mainCallout;
+    border-radius: 8px;
+    gap: var(--space-s);
+
+    &:hover {
+      background-color: vars.$borders;
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.$headerHover;
+      outline-offset: 2px;
+    }
+  }
+
+  // Título do item
+  &__header-title {
+    font-size: var(--font-1);
+    font-weight: 600;
+    color: vars.$headerText;
+    margin-bottom: var(--space-3xs);
+  }
+
+  // Meta informação (subtítulo)
+  &__header-meta {
+    font-size: var(--font-0);
+    color: vars.$headerText;
+  }
+
+  // Botão de expansão
+  &__header-btn {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: vars.$buttons;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: vars.$headerText;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: vars.$mainCallout;
+      transform: scale(1.1);
+    }
+  }
+
+  // Painel expansível
+  &__panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 var(--space-s-m);
+  }
+
+  // Conteúdo interno do painel
+  &__panel-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  // Imagem da arma
+  &__img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    @media (min-width: 768px) {
+      flex-shrink: 0;
+    }
+  }
+
+  // Texto descritivo
+  &__panel-inner p {
+    flex: 1;
+    color: vars.$mainText;
+    margin: 0;
+
+    strong {
+      color: vars.$mainSection;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: var(--font-1);
+    }
+  }
+}

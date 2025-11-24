@@ -1,0 +1,21 @@
+{
+  "name": "exercicio_modulo_21",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": " gulp build",
+    "build-bundle": " gulp build-bundle",
+    "dev": " gulp dev"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.77.0",
+    "uglify-js": "^3.19.0"
+  }
+}

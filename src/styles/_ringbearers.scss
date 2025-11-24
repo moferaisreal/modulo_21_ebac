@@ -1,0 +1,221 @@
+@use "vars";
+
+.ringbearers {
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-l) var(--space-m);
+  overflow-x: hidden;
+
+  &__content {
+    max-width: clamp(320px, 90vw, 1200px);
+    width: 100%;
+    text-align: center;
+    background: vars.$mainBg;
+    border-radius: 8px;
+    padding: var(--space-s);
+    box-shadow: 0 var(--space-3xs) var(--space-2xs) 8px vars.$mainBlack;
+
+    &-title {
+      font-family: vars.$heading;
+      color: vars.$mainSection;
+      font-size: clamp(var(--font-2), 4vw, var(--font-3));
+      margin-bottom: var(--space-xs-s);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    &-subtitle {
+      font-family: vars.$cursive;
+      color: vars.$mainText;
+      font-size: clamp(var(--font-0), 2.5vw, var(--font-2));
+      margin-bottom: var(--space-l-xl);
+      font-style: italic;
+      line-height: 1.6;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-m);
+    box-sizing: border-box;
+  }
+
+  /* Block: ringbearers-ringbearer */
+  &-ringbearer {
+    background: vars.$mainBg;
+    border-radius: var(--space-3xs);
+    padding: var(--space-l);
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+
+    &__image-wrapper {
+      width: 100%;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      border-radius: var(--space-3xs);
+      margin-bottom: var(--space-xs-s);
+      position: relative;
+      background-color: vars.$mainBg;
+    }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: var(--transition);
+      display: block;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &__name {
+      margin-bottom: var(--space-xs);
+    }
+
+    &__description,
+    &__brief {
+      font-size: var(--font-0);
+      color: vars.$mainText;
+      margin-bottom: var(--space-m);
+      line-height: 1.5;
+    }
+
+    &__button {
+      background-color: vars.$buttons;
+      color: vars.$mainCallout;
+      border: none;
+      padding: var(--space-xs) var(--space-m);
+      border-radius: var(--border-radius);
+      font-size: var(--font--1);
+      cursor: pointer;
+      transition: var(--transition);
+
+      &:hover {
+        background-color: vars.$mainBlack;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+/* Block: modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$sidebar;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+
+  &--active {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-m);
+  }
+
+  &__content {
+    background: vars.$mainBg;
+    border-radius: var(--space-3xs);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    padding: var(--space-xl);
+  }
+
+  &__close {
+    position: absolute;
+    top: var(--space-m);
+    right: var(--space-m);
+    background: none;
+    border: none;
+    font-size: var(--font-2);
+    cursor: pointer;
+    color: vars.$mainText;
+    transition: var(--transition);
+
+    &:hover {
+      color: vars.$buttons;
+    }
+  }
+
+  &__image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid vars.$borders;
+    margin: 0 auto var(--space-m);
+    display: block;
+  }
+
+  &__name {
+    font-size: var(--font-2);
+    font-weight: 700;
+    color: vars.$mainText;
+    text-align: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__role,
+  &__description {
+    font-size: var(--font-0);
+    color: vars.$mainText;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .ringbearers {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

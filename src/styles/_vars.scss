@@ -1,0 +1,141 @@
+:root {
+  --transition: all 0.3s ease;
+  // Smaller text sizes for captions, fine print, etc.
+  --font--2: clamp(0.3333rem, 0.2744rem + 0.2621vw, 0.4775rem);
+  // Extra small text
+  --font--1: clamp(0.5rem, 0.3885rem + 0.4956vw, 0.7726rem);
+  // Small text
+  --font-0: clamp(0.75rem, 0.5455rem + 0.9091vw, 1.25rem);
+  // Body text (our baseline)
+  --font-1: clamp(1.125rem, 0.7578rem + 1.6318vw, 2.0225rem); // Small headings
+  --font-2: clamp(
+    1.6875rem,
+    1.0391rem + 2.8816vw,
+    3.2724rem
+  ); // Medium headings
+  --font-3: clamp(2.5313rem, 1.4007rem + 5.0245vw, 5.2948rem); // Large headings
+  --font-4: clamp(
+    3.7969rem,
+    1.8455rem + 8.6728vw,
+    8.5669rem
+  ); // Extra large headings
+  --font-5: clamp(
+    5.6953rem,
+    2.3547rem + 14.8472vw,
+    13.8613rem
+  ); // Huge headings
+
+  /* SPACING */
+
+  /* Fluid Spacing System with clamp() function
+   Each variable uses clamp(min, preferred, max) to create responsive spacing
+   that smoothly scales between different viewport sizes without media queries */
+
+  /* BASIC SPACING SCALE */
+  /* These create a harmonious spacing scale from tiny to extra large */
+
+  --space-3xs: clamp(0.1875rem, 0.1364rem + 0.2273vw, 0.3125rem);
+  /* Extra extra extra small: 3px to 5px - Perfect for fine details like border thickness, 
+   small icon padding, or tiny gaps between inline elements */
+
+  --space-2xs: clamp(0.375rem, 0.2727rem + 0.4545vw, 0.625rem);
+  /* Extra extra small: 6px to 10px - Ideal for small padding inside buttons, 
+   spacing between form labels and inputs, or tight list item spacing */
+
+  --space-xs: clamp(0.5625rem, 0.4091rem + 0.6818vw, 0.9375rem);
+  /* Extra small: 9px to 15px - Good for comfortable padding in small components,
+   spacing between related text elements, or small margins */
+
+  --space-s: clamp(0.75rem, 0.5455rem + 0.9091vw, 1.25rem);
+  /* Small: 12px to 20px - Standard for padding inside cards, spacing between 
+   paragraphs, or moderate component spacing */
+
+  --space-m: clamp(1.125rem, 0.8182rem + 1.3636vw, 1.875rem);
+  /* Medium: 18px to 30px - Perfect for section spacing, larger component padding,
+   or creating breathing room between content blocks */
+
+  --space-l: clamp(1.5rem, 1.0909rem + 1.8182vw, 2.5rem);
+  /* Large: 24px to 40px - Excellent for separating major page sections,
+   creating visual hierarchy, or spacing between different content types */
+
+  --space-xl: clamp(2.25rem, 1.6364rem + 2.7273vw, 3.75rem);
+  /* Extra large: 36px to 60px - Great for major layout spacing, hero section
+   padding, or creating dramatic separation between page regions */
+
+  --space-2xl: clamp(3rem, 2.1818rem + 3.6364vw, 5rem);
+  /* Extra extra large: 48px to 80px - Perfect for generous section spacing,
+   hero area margins, or creating impactful white space in layouts */
+
+  --space-3xl: clamp(4.5rem, 3.2727rem + 5.4545vw, 7.5rem);
+  /* Extra extra extra large: 72px to 120px - Ideal for major layout divisions,
+   landing page hero spacing, or creating premium, spacious designs */
+
+  /* ONE-UP PAIRS */
+  /* These provide intermediate spacing options that flow between adjacent sizes
+   Useful when you need spacing that's "between" two standard sizes */
+
+  --space-3xs-2xs: clamp(0.1875rem, 0.0085rem + 0.7955vw, 0.625rem);
+  /* Flows from 3xs to 2xs (3px to 10px) - Creates gentle scaling for very small
+   spacing needs, like hover state adjustments or micro-interactions */
+
+  --space-2xs-xs: clamp(0.375rem, 0.1449rem + 1.0227vw, 0.9375rem);
+  /* Flows from 2xs to xs (6px to 15px) - Perfect for adaptive padding that needs
+   to be small on mobile but slightly larger on desktop */
+
+  --space-xs-s: clamp(0.5625rem, 0.2813rem + 1.25vw, 1.25rem);
+  /* Flows from xs to s (9px to 20px) - Excellent for component spacing that
+   should feel consistent but scale appropriately across devices */
+
+  --space-s-m: clamp(0.75rem, 0.2898rem + 2.0455vw, 1.875rem);
+  /* Flows from s to m (12px to 30px) - Great for content sections that need
+   more dramatic scaling between mobile and desktop layouts */
+
+  --space-m-l: clamp(1.125rem, 0.5625rem + 2.5vw, 2.5rem);
+  /* Flows from m to l (18px to 40px) - Perfect for major content blocks that
+   need substantial but proportional spacing across screen sizes */
+
+  --space-l-xl: clamp(1.5rem, 0.5795rem + 4.0909vw, 3.75rem);
+  /* Flows from l to xl (24px to 60px) - Ideal for hero sections or major
+   layout areas that should feel generous on large screens */
+
+  --space-xl-2xl: clamp(2.25rem, 1.125rem + 5vw, 5rem);
+  /* Flows from xl to 2xl (36px to 80px) - Excellent for dramatic layout spacing
+   that creates impact on larger viewports while staying reasonable on mobile */
+
+  --space-2xl-3xl: clamp(3rem, 1.1591rem + 8.1818vw, 7.5rem);
+  /* Flows from 2xl to 3xl (48px to 120px) - Perfect for major page divisions
+   with the most dramatic responsive scaling in the system */
+
+  /* CUSTOM PAIRS */
+  /* Special spacing values that skip sizes for specific design needs */
+
+  --space-s-l: clamp(0.75rem, 0.0341rem + 3.1818vw, 2.5rem);
+  /* Flows from s to l (12px to 40px) - Skips the medium size to create more
+   dramatic responsive scaling. Useful for elements that should be compact
+   on mobile but need generous space on desktop, like hero section spacing
+   or major component gaps that need strong responsive behavior */
+}
+
+/* header/nav */
+$headerBg: #2d5016;
+$headerText: #f5f5dc;
+$headerHover: #d4af37;
+
+/* MAIN */
+$mainBg: #f5f5dc;
+$mainSection: #722f37;
+$mainText: #8b4513;
+$mainCallout: #9caf88;
+$mainBlack: #1c1c1c;
+
+/* DETAILS */
+$buttons: #d4af37;
+$borders: #cd7f32;
+$frames: #8b4513;
+$sidebar: #708090;
+/* FONTES */
+$cursive: "Bilbo", cursive;
+
+$text: "Cormorant", serif;
+
+$heading: "MedievalSharp", cursive;

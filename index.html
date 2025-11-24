@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bilbo&family=Cormorant:ital,wght@0,300..700;1,300..700&family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="/src/images/favicon/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/style.css" />
+
+    <title>The Lord of The Rings</title>
+  </head>
+
+  <body>
+    <header class="header header--transparent">
+      <div class="header__container">
+        <h1>
+          <img
+            class="header__logo"
+            src="dist/images/logo/the-lord-of-the-rings-horizontal-gold-1.svg"
+            alt="Senhor dos Aneis"
+          />
+        </h1>
+        <ul class="header__links">
+          <li>
+            <a href="#" class="header__link">Cadastre-se</a>
+          </li>
+          <li>
+            <a href="#" class="header__link">Entrar</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <div class="hero__content-branding">
+          <img src="./dist/images/branding/branding.jpg" alt="" />
+        </div>
+        <h2>Um Anel para Governar Todos</h2>
+        <p>
+          No coração da Terra-média, heróis improváveis se erguem contra as
+          trevas. A aventura começa aqui.
+        </p>
+        <p>
+          Escolha o seu caminho: junte-se à Sociedade do Anel ou as forças de
+          Mordor.
+        </p>
+      </div>
+      <ul class="hero__list">
+        <li class="hero__list-item">
+          <img
+            src="dist/images/logo/fellowship_sigil.jpg"
+            alt="Sociedade do Anel"
+            srcset=""
+          />
+          <button class="hero__button">Sociedade</button>
+        </li>
+        <li class="hero__list-item">
+          <img
+            src="dist/images/logo/mordor_sigil.jpg"
+            alt="Forças de mordor"
+            srcset=""
+          />
+          <button class="hero__button">Mordor</button>
+        </li>
+      </ul>
+    </section>
+
+    <section class="timeline" id="timeline">
+      <div class="timeline__content">
+        <h2 class="timeline__title">Linha do Tempo</h2>
+        <p class="timeline__subtitle">
+          Dos eventos do Hobbit até a Guerra do Anel, explore a rica história da
+          Terra-média.
+        </p>
+
+        <div class="timeline__navbar">
+          <button
+            class="timeline__navbar-button timeline__navbar-button--active"
+            data-era="hobbit"
+          >
+            <img src="./dist/images/logo/hobbit.png" alt="O Hobbit" />
+          </button>
+          <button class="timeline__navbar-button" data-era="paz-vigilante">
+            <img
+              src="./dist/images/logo/watchful_peace.jpg"
+              alt="Paz Vigilante"
+            />
+          </button>
+          <button class="timeline__navbar-button" data-era="senhor-dos-aneis">
+            <img src="./dist/images/logo/lotr.png" alt="O Senhor dos Aneis" />
+          </button>
+        </div>
+
+        <div class="timeline__description" id="timeline-description">
+          <h3 class="timeline__description-title"></h3>
+          <p class="timeline__description-text"></p>
+          <div class="timeline__description-lists"></div>
+        </div>
+        <button class="timeline__details-btn"></button>
+      </div>
+    </section>
+
+    <section class="armas" id="armas">
+      <div class="armas__content">
+        <h2 class="armas__content_title">Armas Icônicas</h2>
+        <p class="armas__content_text">
+          As armas lendárias da Terra Média — não são apenas instrumentos de
+          guerra, mas símbolos de coragem, herança e destino. Cada uma carrega o
+          peso de eras passadas e desempenha papel crucial na luta contra o mal.
+          Elas conectam personagens a suas origens e profecias, guiando o rumo
+          da história. Em suas lâminas brilha a esperança dos povos livres
+          diante das trevas.
+        </p>
+        <ul class="armas__list" role="list">
+          <li class="armas__item" data-index="0">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-0"
+              id="header-0"
+            >
+              <div>
+                <div class="armas__header-title">Glamdring</div>
+                <div class="armas__header-meta">
+                  redescoberta por Thorin Escudo de Carvalho na caverna dos
+                  trolls em O Hobbit
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-0"
+              role="region"
+              aria-labelledby="header-0"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/glamdring.png"
+                  alt="glamdring"
+                />
+                <p>
+                  <strong>Glamdring</strong> Glamdring, conhecida como o
+                  "Martelo dos Inimigos", é uma espada lendária da Terra Média,
+                  forjada na Primeira Era pelos elfos de Gondolin, uma cidade
+                  famosa por seus armeiros habilidosos. Foi redescoberta por
+                  Bilbo Bolseiro e seus companheiros na caverna dos trolls em O
+                  Hobbit, junto com as espadas élficas Orcrist e Ferroada.-
+                  Gandalf, o Mago Branco, a reivindicou e a empunhou em batalhas
+                  decisivas, incluindo o confronto contra o Balrog em Moria. Sua
+                  lâmina brilhante e afiada é eficaz contra orcs e outras
+                  criaturas das trevas, refletindo a luz em um brilho azul
+                  quando inimigos estão próximos. Glamdring simboliza a luta
+                  contínua entre o bem e o mal na Terra Média, sendo uma arma de
+                  grande poder e significado histórico.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="1">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-1"
+              id="header-1"
+            >
+              <div>
+                <div class="armas__header-title">Orcrist</div>
+                <div class="armas__header-meta">
+                  redescoberta por Thorin Escudo de Carvalho na caverna dos
+                  trolls em O Hobbit
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-1"
+              role="region"
+              aria-labelledby="header-1"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/orcrist.png"
+                  alt="Orcrist "
+                />
+                <p>
+                  <strong>Orcrist </strong> Orcrist, apelidada de "Fende-Orcs",
+                  é uma espada élfica de grande renome, forjada na cidade de
+                  Gondolin durante a Primeira Era, assim como sua "irmã"
+                  Glamdring. Criada pelos elfos de Gondolin, Orcrist foi
+                  empunhada por Ecthelion de Gondolin, um dos maiores guerreiros
+                  élficos. Thorin a usou com orgulho durante sua jornada para
+                  recuperar Erebor, tornando-se um símbolo de sua liderança e
+                  bravura. Após a morte de Thorin na Batalha dos Cinco
+                  Exércitos, Orcrist foi colocada sobre seu túmulo dentro da
+                  Montanha Solitária. Lá, ela continua a brilhar quando inimigos
+                  se aproximam, protegendo seu antigo mestre mesmo na morte.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="2">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Ferroada</div>
+                <div class="armas__header-meta">
+                  Descoberta por Bilbo Bolseiro na caverna dos trolls, junto com
+                  as outras duas espadas élficas
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/sting.png"
+                  alt="Ferroada"
+                />
+                <p>
+                  <strong>Ferroada </strong>é uma pequena espada élfica com
+                  grande importância na saga de O Hobbit e O Senhor dos Anéis.
+                  Apesar de seu tamanho, é uma arma poderosa e simbólica,
+                  especialmente nas mãos de hobbits corajosos. Forjada pelos
+                  elfos de Gondolin durante a Primeira Era, assim como Glamdring
+                  e Orcrist. Bilbo a nomeia "Ferroada" após usá-la para derrotar
+                  aranhas gigantes na Floresta das Trevas. Mais tarde, ele a
+                  passa para Frodo Bolseiro, que a usa em sua jornada para
+                  destruir o Um Anel. Brilha com uma luz azul quando orcs ou
+                  goblins estão por perto.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="3">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Flecha Negra</div>
+                <div class="armas__header-meta">
+                  A Flecha Negra é uma arma lendária presente em O Hobbit,
+                  associada à linhagem dos arqueiros de Valle e ao herói Bard, o
+                  matador de dragões.
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/black_arrow.png"
+                  alt="Flecha Negra"
+                />
+                <p>
+                  <strong>Flecha Negra</strong> pertence à família de Bard,
+                  descendente de Girion, Senhor de Valle, que tentou defender
+                  sua cidade contra o dragão Smaug. Bard a guardava como uma
+                  relíquia, usada apenas em momentos de extrema necessidade.
+                  Durante o ataque de Smaug à Cidade do Lago (Esgaroth), Bard a
+                  utiliza como sua última esperança para deter o monstro. Bard
+                  dispara a Flecha Negra com precisão, atingindo uma falha na
+                  couraça de Smaug, revelada por Bilbo durante sua exploração em
+                  Erebor.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="4">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Lâminas Barrow</div>
+                <div class="armas__header-meta">
+                  são espadas antigas e encantadas, encontradas por Tom Bombadil
+                  nas Túmulos dos Reis (Barrow-downs) e entregues aos hobbits em
+                  A Sociedade do Anel.
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/barrow_blade.jpeg"
+                  alt="laminas barrow"
+                />
+                <p>
+                  <strong>Lâminas Barrow </strong> Forjadas pelos homens de
+                  Arnor, provavelmente durante a guerra contra o reino maligno
+                  de Angmar. Enterradas com os nobres guerreiros dos Túmulos dos
+                  Reis, foram corrompidas pelo espírito maligno conhecido como
+                  Barrow-wight. Após resgatar os hobbits, Tom Bombadil distribui
+                  as espadas como presente, reconhecendo seu valor contra o mal
+                  antigo. As lâminas são afiadas e encantadas, eficazes contra
+                  criaturas das trevas. Uma delas, empunhada por Merry,
+                  desempenha papel crucial ao ferir o Rei Bruxo de Angmar na
+                  Batalha dos Campos de Pelennor, quebrando a magia que o
+                  protegia. Nas adaptações cinematográficas, as lâminas são
+                  retratadas como espadas élficas, e são entregues por Aragorn.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="5">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Lâminas Morgul</div>
+                <div class="armas__header-meta">
+                  A mais famosa foi usada pelo Rei Bruxo de Angmar para ferir
+                  Frodo Bolseiro em Amon Sûl
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/morgul_blade.png"
+                  alt="Cajado do Vigia"
+                />
+                <p>
+                  <strong>Lâminas Morgul</strong> são armas sombrias e
+                  amaldiçoadas utilizadas pelos Nazgûl, os Espectros do Anel,
+                  servos do Senhor do Escuro, Sauron. Acredita-se que tenham
+                  sido forjadas em Minas Morgul, a fortaleza dos Nazgûl,
+                  imbuídas com magia negra e veneno espiritual. Ao atingir uma
+                  vítima, a lâmina se fragmenta, deixando um estilhaço que
+                  lentamente se move em direção ao coração. Se não for removido
+                  a tempo, o fragmento transforma a vítima em um espectro, um
+                  servo das trevas. A lâmina se desintegra após o ataque,
+                  deixando apenas o cabo, como visto por Aragorn. A origem exata
+                  e o processo de criação dessas armas permanecem envoltos em
+                  mistério, reforçando seu caráter maligno e sobrenatural.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="6">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Gúthwinë</div>
+                <div class="armas__header-meta">
+                  Gúthwinë, cujo nome significa “Amiga da Batalha” em Rohirric
+                  (a língua dos Rohirrim), é a espada pessoal de Éomer, sobrinho
+                  do rei Théoden e eventual rei de Rohan após a Guerra do Anel.
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/Gúthwinë.png"
+                  alt="Gúthwinë"
+                />
+                <p>
+                  <strong>Gúthwinë </strong> é mencionada em O Senhor dos Anéis,
+                  especialmente durante as batalhas travadas por Éomer ao lado
+                  de Aragorn, Legolas e Gimli. Éomer empunha Gúthwinë com
+                  destreza nas batalhas contra os orcs, os Uruk-hai e os
+                  exércitos de Sauron. A espada é vista como uma extensão da
+                  bravura e da honra dos cavaleiros de Rohan. Em momentos
+                  decisivos, como a Batalha dos Campos de Pelennor, Gúthwinë é
+                  levantada com o grito de guerra: “Gúthwinë para Éomer!” — um
+                  chamado que inspira seus guerreiros.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="7">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Herugrim</div>
+                <div class="armas__header-meta">
+                  é a espada real de Théoden, rei de Rohan, e um símbolo da
+                  realeza e da bravura dos Rohirrim. Seu nome significa “Feroz
+                  Espada” ou “Espada da Fúria” em Rohirric, refletindo o
+                  espírito guerreiro de seu portador.
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/Herugrim.png"
+                  alt="Herugrim"
+                />
+                <p>
+                  <strong>Herugrim</strong> é uma espada ancestral, passada de
+                  geração em geração entre os reis de Rohan. Durante o domínio
+                  de Gríma Língua de Cobra, conselheiro corrompido por Saruman,
+                  Herugrim foi retirada de Théoden e mantida trancada, como
+                  parte do esforço para enfraquecer o rei. Após a intervenção de
+                  Gandalf, Théoden recupera sua força e sua espada, retomando
+                  seu papel como líder dos Rohirrim.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="8">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Narsil</div>
+                <div class="armas__header-meta">
+                  é uma das espadas mais icônicas da Terra Média, símbolo da
+                  linhagem dos reis e da luta contra as trevas. Seu nome vem do
+                  Quenya, combinando "nár" (fogo) e "sil" (luz), refletindo sua
+                  origem nobre e seu brilho lendário.
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/narsil.png"
+                  alt="narsil"
+                />
+                <p>
+                  <strong>Forjada </strong> por Telchar de Nogrod, um renomado
+                  ferreiro anão da Primeira Era. Empunhada por Elendil, rei de
+                  Arnor e Gondor, durante a Última Aliança contra Sauron.Durante
+                  a batalha final, Elendil é morto e Narsil se quebra sob seu
+                  corpo. Seu filho Isildur usa a lâmina quebrada para cortar o
+                  Um Anel da mão de Sauron, derrotando temporariamente o Senhor
+                  do Escuro. Os fragmentos de Narsil são guardados por séculos
+                  na casa de Elrond em Valfenda. Tornam-se símbolo da esperança
+                  e da herança dos reis de Gondor.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="armas__item" data-index="9">
+            <div
+              class="armas__header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="header-2"
+            >
+              <div>
+                <div class="armas__header-title">Andúril</div>
+                <div class="armas__header-meta">
+                  a “Chama do Oeste”, é a espada reforjada a partir dos
+                  fragmentos de Narsil, a lâmina que derrotou Sauron na Última
+                  Aliança. Ela representa a esperança renovada dos homens e o
+                  retorno da linhagem real.
+                </div>
+              </div>
+              <button
+                class="armas__header-btn"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="armas__panel"
+              id="panel-2"
+              role="region"
+              aria-labelledby="header-2"
+            >
+              <div class="armas__panel-inner">
+                <img
+                  class="armas__img"
+                  src="./dist/images/weapons/anduril.png"
+                  alt="Andúril"
+                />
+                <p>
+                  <strong>A lâmina reforjada</strong> brilha com luz própria e
+                  possui inscrições élficas que exaltam sua origem e destino.
+                  Seu nome, Andúril, significa “Chama do Oeste” em Quenya,
+                  refletindo a luz da esperança contra as trevas. É símbolo da
+                  realeza de Gondor e da união dos povos livres da Terra Média.
+                  Aragorn empunha Andúril nas batalhas contra as forças de
+                  Sauron, incluindo o cerco de Minas Tirith e a Batalha do
+                  Portão Negro. A espada serve como prova de sua linhagem e
+                  liderança, inspirando aliados e intimidando inimigos. Andúril
+                  é mais que uma arma — é um estandarte de renovação, coragem e
+                  destino. Com ela, Aragorn cumpre sua jornada como Rei Elessar,
+                  restaurando a glória de Gondor.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ringbearers" id="ringbearers">
+      <div class="ringbearers__content">
+        <h2 class="ringbearers__content-title">Portadores e Poderes</h2>
+        <p class="ringbearers__content-subtitle">
+          A Jornada dos Anéis e seus portadores na Terra-média
+        </p>
+        <div class="ringbearers__grid">
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/sauron.jpg"
+                alt="sauron"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Sauron</h3>
+            <p class="ringbearers-ringbearer__description">
+              Sauron é um espírito Maia que ascendeu como Senhor das Trevas da
+              Terra-média. Inicialmente servo de Morgoth, ele reconstruiu seu
+              poder na Segunda Era para dominar o mundo. É o principal
+              antagonista de O Senhor dos Anéis e o criador e dono original do
+              Um Anel.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Nascido como Mairon e originalmente alinhado ao Vala Aulë, Sauron
+              valorizava ordem, habilidade e domínio. Foi seduzido pela promessa
+              de poder de Morgoth, tornando-se seu principal tenente. Tornou-se
+              mestre em forja, feitiçaria e engano, assumindo a forma bela de
+              Annatar para influenciar os elfos antes de se revelar como Senhor
+              das Trevas.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member1')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Isildur.jpg"
+                alt="Isildur"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Isildur</h3>
+            <p class="ringbearers-ringbearer__description">
+              foi um rei dos homens, filho de Elendil e cofundador dos reinos de
+              Arnor e Gondor. É conhecido por ter cortado o Um Anel da mão de
+              Sauron durante a Guerra da Última Aliança, mas recusou-se a
+              destruí-lo, o que permitiu que o mal de Sauron sobrevivesse.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Isildur era descendente de Elros, fundador de Númenor, e filho
+              mais velho de Elendil. Após a queda de Númenor, ele fugiu com seu
+              pai para a Terra-média e ajudou a fundar os reinos de Arnor e
+              Gondor. -
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member2')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Déagol.jpg"
+                alt="Déagol"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Déagol</h3>
+            <p class="ringbearers-ringbearer__description">
+              Personagem secundário de O Senhor dos Anéis, primo de Sméagol. Ele
+              encontra o Um Anel por acaso no rio Anduin e é assassinado por
+              Sméagol, que se torna Gollum. Sua descoberta marca o início da
+              corrupção de Sméagol e a retomada do ciclo de influência do Anel
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Déagol era um hobbit da raça dos Stoor, que vivia próximo ao rio
+              Anduin. Durante uma pescaria com seu primo Sméagol, ele encontra o
+              Um Anel no leito do rio após ser puxado para baixo por um peixe.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member3')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Sméagol.jpg"
+                alt="Sméagol"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Sméagol</h3>
+            <p class="ringbearers-ringbearer__description">
+              mais tarde conhecido como Gollum, era um hobbit da raça Stoor que
+              encontrou o Um Anel após seu primo Déagol o descobrir no rio
+              Anduin.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Corrompido pelo poder do Anel, Sméagol assassinou Déagol e foi
+              lentamente transformado em Gollum — uma criatura obcecada, isolada
+              e dividida entre sua antiga identidade e a influência maligna do
+              Anel.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member4')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Bilbo_Baggins.jpg"
+                alt="Bilbo Bolseiro"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Bilbo Bolseiro</h3>
+            <p class="ringbearers-ringbearer__description">
+              é um hobbit da região do Condado, protagonista de O Hobbit e
+              personagem importante em O Senhor dos Anéis. Durante uma aventura
+              com os anões liderados por Thorin Escudo de Carvalho, Bilbo
+              encontra o Um Anel na caverna de Gollum e o leva consigo, sem
+              saber de seu verdadeiro poder. Sua descoberta marca o início da
+              saga que culmina na destruição do Anel.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Bilbo é um hobbit respeitável, amante da tranquilidade, da boa
+              comida e da rotina. No entanto, sua curiosidade e coragem o levam
+              a embarcar em uma jornada inesperada com Gandalf e os anões para
+              recuperar o Reino de Erebor.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member5')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Frodo Baggins.jpg"
+                alt="Frodo Bolseiro"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Frodo Bolseiro</h3>
+            <p class="ringbearers-ringbearer__description">
+              é um hobbit do Condado e o protagonista de O Senhor dos Anéis.
+              Herdeiro de Bilbo, ele recebe o Um Anel e assume a missão de
+              destruí-lo em Mordor. Sua jornada é marcada por coragem,
+              sacrifício e o peso da corrupção do Anel.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Frodo é um hobbit pacato, inteligente e gentil, criado por seu tio
+              Bilbo. Após herdar o Um Anel, é orientado por Gandalf a deixá-lo e
+              embarcar em uma jornada para impedir que Sauron recupere seu
+              poder.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member6')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Elrond.jpg"
+                alt="Elrond"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Elrond</h3>
+            <p class="ringbearers-ringbearer__description">
+              é um meio-elfo, Senhor de Valfenda (Rivendell), conselheiro sábio
+              e poderoso que desempenha papel fundamental nas histórias de O
+              Hobbit e O Senhor dos Anéis. Ele é um dos portadores dos Três
+              Anéis Élficos e ajuda a formar a Sociedade do Anel
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Elrond é filho de Eärendil e Elwing, descendente tanto de elfos
+              quanto de homens. Escolheu viver como elfo e tornou-se um dos mais
+              antigos e respeitados líderes da Terra-média.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member7')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Galadriel.jpg"
+                alt="Galadriel"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Galadriel</h3>
+            <p class="ringbearers-ringbearer__description">
+              é uma elfa nobre da linhagem dos Noldor, Senhora de Lothlórien e
+              uma das personagens mais antigas e sábias da Terra-média.
+              Portadora de um dos Três Anéis Élficos, ela representa a
+              resistência contra Sauron e a preservação da beleza e da luz em
+              tempos sombrios.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Galadriel nasceu em Valinor, filha de Finarfin, e é uma das
+              últimas elfas a ter vivido na Terra Abençoada. Ela participou da
+              rebelião dos Noldor e veio para a Terra-média na Primeira Era.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member8')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Gandalf.jpg"
+                alt="Gandalf"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Gandalf, o Cinzento</h3>
+            <p class="ringbearers-ringbearer__description">
+              é um dos cinco Istari (magos) enviados à Terra-média pelos Valar
+              para ajudar os povos livres contra Sauron. Conhecido por sua
+              sabedoria, poder e compaixão, ele desempenha papel central em O
+              Hobbit e O Senhor dos Anéis. É também o portador secreto de um dos
+              Três Anéis Élficos
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Gandalf é, na verdade, o Maia Olórin, um espírito imortal que
+              viveu em Valinor antes de ser enviado à Terra-média em forma
+              humana. Como Istari, sua missão era guiar — não dominar — os povos
+              livres na luta contra o mal.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member9')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/The_Witch-king_of_Angmar.jpg"
+                alt="O rei bruxo de Angmar"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">O Rei Bruxo de Angmar</h3>
+            <p class="ringbearers-ringbearer__description">
+              é o líder dos Nazgûl, os nove Espectros do Anel corrompidos por
+              Sauron. Outrora um rei humano que recebeu um dos Nove Anéis de
+              Poder, ele tornou-se um servo imortal do Senhor das Trevas.
+              Comandou o reino de Angmar e foi o mais poderoso e cruel dos
+              seguidores de Sauron
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Por volta de 1300 da Terceira Era, fundou o reino de Angmar no
+              norte da Terra-média. De lá, travou guerras contra o reino de
+              Arnor, destruindo-o e espalhando o terror. -
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member10')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Khamul_the_Easterling.jpg"
+                alt="Khamûl, o Oriental"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Khamûl, o Oriental</h3>
+            <p class="ringbearers-ringbearer__description">
+              foi um dos nove reis humanos corrompidos pelos Anéis de Poder e
+              transformados em Nazgûl, os Espectros do Anel. Conhecido como o
+              Oriental por sua origem em Rhûn, ele era o segundo em comando
+              entre os Nazgûl, atrás apenas do Rei Bruxo de Angmar.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              No ano 2951 da Terceira Era, Sauron enviou Khamûl como seu tenente
+              para comandar a fortaleza de Dol Guldur, na Floresta das Trevas.
+              Ele liderava operações sombrias e espionagem a partir dali,
+              acompanhado por um ou dois outros Nazgûl.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member11')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Thrór.jpg"
+                alt="Thrór"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">
+              Thrór, o Rei sob a Montanha
+            </h3>
+            <p class="ringbearers-ringbearer__description">
+              foi o Rei do Povo de Durin e governante de Erebor, a Montanha
+              Solitária. Pai de Thráin II e avô de Thorin Escudo de Carvalho,
+              sua morte trágica desencadeou a Guerra entre Anões e Orcs. Ele é
+              lembrado como um líder orgulhoso e símbolo da antiga glória dos
+              anões.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Nascido em 2542 da Terceira Era, Thrór era descendente direto de
+              Durin, o Imortal. Tornou-se rei em 2589, governando os anões nas
+              Montanhas Cinzentas antes de liderar a retomada de Erebor, onde
+              prosperou até a chegada de Smaug.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member12')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+          <article class="ringbearers-ringbearer">
+            <div class="ringbearers-ringbearer__image-wrapper">
+              <img
+                src="./dist/images/lightbox/Thráin_II.jpg"
+                alt="Thráin II"
+                class="ringbearers-ringbearer__image"
+              />
+            </div>
+            <h3 class="ringbearers-ringbearer__name">Thráin II</h3>
+            <p class="ringbearers-ringbearer__description">
+              filho de Thrór e pai de Thorin Escudo de Carvalho. Após a morte
+              brutal de seu pai, liderou os anões na Guerra contra os Orcs. Mais
+              tarde, tentou recuperar Erebor, mas foi capturado por Sauron em
+              Dol Guldur, onde morreu. Ele foi o último portador conhecido de um
+              dos Sete Anéis dos Anões.
+            </p>
+            <p class="ringbearers-ringbearer__brief">
+              Nascido em 2644 da Terceira Era, Thráin II era herdeiro da
+              linhagem de Durin. Após a morte de seu pai Thrór por Azog em
+              Moria, liderou os anões na sangrenta Guerra entre Anões e Orcs,
+              culminando na Batalha de Azanulbizar.
+            </p>
+            <button
+              class="ringbearers-ringbearer__button"
+              onclick="openModal('member13')"
+            >
+              Saiba Mais
+            </button>
+          </article>
+        </div>
+      </div>
+      <!-- modal -->
+      <div class="modal" id="member1">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member1')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/sauron_modal.jpg"
+            alt="Sauron"
+            class="modal__image"
+          />
+          <h2 class="modal__name">O Um Anel</h2>
+          <p class="modal__role"></p>
+          <div class="modal__description">
+            <p>
+              <strong>Criação e propósito</strong>: O Um Anel foi forjado por
+              Sauron nas chamas da Montanha da Perdição para controlar os outros
+              Anéis do Poder e subjugar seus portadores. Possui uma inscrição em
+              Língua Negra que se revela sob o fogo.
+            </p>
+            <p>
+              <strong>Poderes e efeitos</strong> : O Anel concede invisibilidade
+              e percepção alterada aos mortais, prolonga a vida de quem o
+              mantém, amplifica o poder de Sauron e exerce uma influência
+              corruptora que aprofunda o apego e enfraquece a vontade
+            </p>
+            <p>
+              <strong>Relação com Sauron e destino</strong> : O Anel era tanto
+              uma ferramenta quanto uma extensão da essência de Sauron. Sua
+              destruição foi o ato decisivo que anulou sua capacidade de
+              dominação e encerrou sua ameaça à Terra-média.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member2">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member2')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Isildur_modal.jpg"
+            alt="Isildur"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Isildur</h2>
+          <p class="modal__role">
+            Lutou ao lado dos elfos e homens contra Sauron. Após a morte de
+            Elendil e Gil-galad, Isildur cortou o Um Anel da mão de Sauron com a
+            espada Narsil, derrotando temporariamente o Senhor das Trevas. Em
+            vez de destruir o Anel, Isildur o reivindicou como herança. Pouco
+            tempo depois, foi emboscado por orcs nos Campos de Lis e morto. O
+            Anel se perdeu no rio Anduin, iniciando sua jornada até Gollum e,
+            mais tarde, Bilbo.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Legado </strong> : A escolha de Isildur de manter o Anel
+              teve consequências duradouras, permitindo que Sauron sobrevivesse
+              em espírito. Sua linhagem continuou nos Dúnedain do Norte,
+              culminando em Aragorn, que ajudaria a destruir o Anel.
+            </p>
+            <p>
+              <strong>Símbolo de orgulho e tragédia</strong> : A decisão de IsO
+              “Flagelo de Isildur” a falha humana diante da tentação do poder.
+              Embora tenha vencido Sauron, sua recusa em destruir o artefato
+              perpetuou o mal na Terra-média.
+            </p>
+            <p>
+              <strong>O “Flagelo de Isildur”</strong> : O Um Anel é chamado
+              assim por ter sido a causa de sua morte e da continuidade da
+              ameaça de Sauron.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member3">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member3')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Déagol_modal.jpg"
+            alt="Déagol"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Déagol</h2>
+          <p class="modal__role">
+            Ao encontrar o Anel, Déagol é imediatamente fascinado por ele, mas
+            não demonstra sinais de obsessão. Sméagol exige o Anel como presente
+            de aniversário, e quando Déagol se recusa, é assassinado por seu
+            primo.
+          </p>
+          <div class="modal__description">
+            <p>
+              Importância narrativa <strong>Importância narrativa</strong> : A
+              morte de Déagol marca o inInfluência imediataGollum, mostrando o
+              poder corruptor do Um Anel mesmo antes de ser usado. Esse evento
+              também reSímbolo de corrupçãoe relacionamentos, levando à
+              violência e à decadência moral.
+            </p>
+            <p>
+              <strong>Influência imediata</strong> : Embora Déagol não tenha
+              usado o Anel, sua descoberta já desencadeia tragédia. O Anel
+              exerce influência indireta, provocando cobiça e assassinato.
+            </p>
+            <p>
+              <strong>Símbolo de corrupção</strong> : A morte de Déagol é uma
+              das primeiras evidências da capacidade do Anel de corromper mesmo
+              os mais simples e pacíficos seres da Terra-média, iniciando um
+              ciclo de possessão que culmina em Gollum.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member4">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member4')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Gollum.jpg"
+            alt=""
+            class="modal__image"
+          />
+          <h2 class="modal__name">Gollum</h2>
+          <p class="modal__role">
+            Sméagol era um hobbit curioso e sensível, mas ao assassinar Déagol
+            para obter o Anel, iniciou sua queda moral. Expulso por sua
+            comunidade, refugiou-se em cavernas nas Montanhas Sombrias, onde
+            viveu por séculos, alimentado pelo poder do Anel e pela escuridão. O
+            Anel fragmentou sua mente, criando duas personas: Sméagol, a parte
+            mais inocente e arrependida, e Gollum, a persona dominada pela
+            obsessão e pela malícia. Essa dualidade é central em sua trajetória,
+            especialmente durante sua convivência com Frodo e Sam.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Papel na história</strong> : Gollum desempenha um papel
+              crucial em O Senhor dos Anéis, guiando Frodo até Mordor. Apesar de
+              sua traição, é ele quem, ao tentar recuperar o Anel no Monte da
+              Perdição, acaba caindo com ele nas chamas — destruindo o Anel e
+              Sauron.
+            </p>
+            <p>
+              <strong>Corrupção profunda</strong> : O Anel prolongou sua vida
+              por mais de 500 anos, mas à custa de sua sanidade e humanidade.
+              Ele chamava o Anel de “meu precioso”, símbolo de sua obsessão e
+              dependência.
+            </p>
+            <p>
+              <strong>Vítima e vilão</strong> : Gollum é ao mesmo tempo trágico
+              e perigoso — uma vítima do poder do Anel, mas também um agente de
+              traição. Sua história mostra como o Anel destrói até os mais
+              humildes.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member5">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member5')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Bilbo_Baggins_modal.jpg"
+            alt="Bilbo Bolseiro"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Bilbo Bolseiro</h2>
+          <p class="modal__role">
+            Durante sua aventura, Bilbo se perde nas cavernas das Montanhas
+            Sombrias e encontra Gollum. Ao vencer um jogo de enigmas e escapar,
+            ele encontra o Um Anel, que Gollum havia perdido. Sem saber de sua
+            natureza maligna, Bilbo o utiliza para se tornar invisível e escapar
+            de perigos.
+          </p>
+          <div class="modal__description">
+            <p>
+              Bilbo guarda o Anel por décadas, e embora não seja corrompido como
+              Gollum, começa a sentir seus efeitos — apego excessivo,
+              irritabilidade e envelhecimento retardado. Eventualmente, ele
+              entrega o Anel a Frodo, seu sobrinho, iniciando a missão de
+              destruí-lo.
+            </p>
+            <p>
+              Uso limitado, mas influente: Bilbo usou o Anel principalmente para
+              se esconder e evitar conflitos, sem compreender sua origem. Mesmo
+              assim, o Anel começou a afetá-lo psicologicamente.
+            </p>
+            <p>
+              Ao entregar o Anel voluntariamente a Frodo, Bilbo realiza um ato
+              raro — resistir à possessividade do Anel, algo que poucos
+              conseguiram. Esse gesto é essencial para o sucesso da missão de
+              Frodo.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member6">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member6')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Frodo_Baggins_modal.jpg"
+            alt="Frodo Bolseiro"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Frodo Bolseiro</h2>
+          <p class="modal__role">
+            Frodo lidera a Sociedade do Anel e, após sua dissolução, continua a
+            missão com Sam até os confins de Mordor. Enfrenta perigos físicos e
+            psicológicos, incluindo a influência crescente do Anel sobre sua
+            mente. Apesar de sua fragilidade, Frodo resiste à tentação do Anel
+            por quase toda a jornada. No final, sucumbe brevemente à sua
+            influência, mas Gollum intervém, levando à destruição do Anel.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Legado e partida</strong> : Após a guerra, Frodo nunca se
+              recupera totalmente dos traumas. Ele parte para Valinor com os
+              elfos, buscando cura e paz.
+            </p>
+            <p>
+              <strong>Peso e influência</strong> : O Anel afeta Frodo
+              profundamente, física e emocionalmente. Ele carrega o fardo da
+              missão e da corrupção, tornando-se cada vez mais isolado e
+              atormentado.
+            </p>
+            <p>
+              <strong>Símbolo de resistência</strong> : Frodo representa a
+              capacidade de resistir ao mal, mesmo sem força ou poder. Sua
+              jornada mostra que coragem e compaixão podem enfrentar as maiores
+              trevas.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member7">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member7')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Elrond_modal.jpg"
+            alt="Elrond"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Elrond</h2>
+          <p class="modal__role">
+            Fundou e governou Valfenda, um refúgio de sabedoria, cura e
+            resistência contra o mal. Lá, preservou conhecimento antigo e
+            ofereceu abrigo a heróis como Bilbo, Frodo e Aragorn.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Vilya, o Anel do Ar</strong> : Elrond é o portador de
+              Vilya, o mais poderoso dos Três Anéis Élficos. Esse anel não
+              corrompe como o Um Anel, mas foi ocultado de Sauron e usado para
+              preservar Valfenda.
+            </p>
+            <p>
+              <strong>Poder e propósito</strong> : Vilya concedia a Elrond poder
+              de cura, proteção e preservação. Com ele, manteve Valfenda como um
+              bastião contra o avanço das trevas.
+            </p>
+            <p>
+              <strong>Fim dos Anéis</strong> : Após a destruição do Um Anel, os
+              Três Anéis Élficos perderam seu poder. Elrond então parte para
+              Valinor, encerrando sua missão na Terra-média.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member8">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member8')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Galadriel_modal.jpg"
+            alt="Galadriel"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Galadriel, Senhora de Lothlórien</h2>
+          <p class="modal__role">
+            Ao longo das eras, Galadriel se tornou uma das líderes élficas mais
+            respeitadas. Em Lothlórien, ela governava com Celeborn e mantinha um
+            reino de paz e esplendor, protegido contra a influência de Sauron.
+            Galadriel recebe a Sociedade do Anel em Lothlórien e oferece
+            conselhos, presentes e visões a Frodo e seus companheiros. Ela
+            recusa o Um Anel quando Frodo lhe oferece, demonstrando sua força
+            interior e sabedoria.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Nenya, o Anel da Água</strong> : Galadriel é a portadora
+              de Nenya, feito de mithril e adornado com um diamante. Esse Anel
+              não corrompe, mas foi ocultado de Sauron e usado para preservar
+              Lothlórien.
+            </p>
+            <p>
+              <strong>Poder e propósito</strong> : Nenya permitia a Galadriel
+              manter a beleza, a paz e a resistência contra o mal em seu reino.
+              Era símbolo de preservação e esperança.
+            </p>
+            <p>
+              <strong>Fim dos Anéis</strong> : Com a destruição do Um Anel,
+              Nenya perdeu seu poder, e Galadriel deixou a Terra-média,
+              encerrando a era dos elfos.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member9">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member9')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Gandalf_the_white__modal.jpg"
+            alt="gandalf"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Gandalf, o Branco</h2>
+          <p class="modal__role">
+            Gandalf é conhecido por sua astúcia, paciência e profundo
+            conhecimento. Ele reúne a Sociedade do Anel, orienta Frodo,
+            confronta Saruman e lidera a resistência contra Sauron. Após
+            enfrentar o Balrog em Moria, Gandalf morre e retorna como Gandalf, o
+            Branco, assumindo o papel de líder dos Istari e substituindo
+            Saruman.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Narya, o Anel do Fogo</strong> : Gandalf é o portador de
+              Narya, o Anel Élfico da chama. Esse anel foi originalmente dado a
+              Círdan, que o confiou a Gandalf por reconhecer sua sabedoria e
+              missão.
+            </p>
+            <p>
+              <strong>Poder e propósito</strong> : Narya fortalece a coragem,
+              inspira esperança e resiste ao desespero — qualidades que Gandalf
+              transmite aos povos da Terra-média em tempos sombrios.
+            </p>
+            <p>
+              <strong>Fim dos Anéis</strong> : Após a destruição do Um Anel,
+              Narya perde seu poder, e Gandalf parte para Valinor com os outros
+              portadores dos Anéis Élficos
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member10">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member10')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/WitchKing_of_Angmar_modal.jpg"
+            alt="Rei Bruxo de Angmar"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Rei Bruxo de Angmar</h2>
+          <p class="modal__role">
+            Como Senhor dos Nazgûl, lidera a perseguição a Frodo e o Um Anel. Na
+            Batalha dos Campos de Pelennor, enfrenta Éowyn e Merry. Apesar da
+            profecia de que “nenhum homem” poderia matá-lo, é derrotado por
+            Éowyn — uma mulher — com ajuda de Merry e sua lâmina númenóreana. -
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Títulos e nomes</strong> : Também chamado de Senhor dos
+              Nazgûl, Rei Pálido e Capitão Negro, é o mais fiel e letal dos
+              servos de Sauron.
+            </p>
+            <p>
+              <strong>Um dos Nove</strong> : O Rei Bruxo recebeu um dos Nove
+              Anéis dados aos homens, que lhes concederam poder e longevidade,
+              mas os tornaram espectros sob o domínio do Um Anel.
+            </p>
+            <p>
+              <strong>Servidão eterna</strong> : Como Nazgûl, sua existência
+              está ligada ao poder de Sauron e ao Um Anel. Sem o Anel-mestre,
+              sua forma e poder se dissipam.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member11">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member11')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Khamul_the_Easterling_modal.jpg"
+            alt="Khamûl, o Oriental
+"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Khamûl, o Oriental</h2>
+          <p class="modal__role">
+            Era especialmente sensível à presença do Um Anel, sendo capaz de
+            rastreá-lo com precisão. No entanto, seus poderes enfraqueciam
+            durante o dia, tornando-o menos eficaz sob a luz do sol. -
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Identidade única</strong> : Khamûl é o único Nazgûl, além
+              do Rei Bruxo, cujo nome é conhecido nas obras de Tolkien. Isso o
+              torna uma figura singular entre os Espectros do Anel.
+            </p>
+            <p>
+              <strong> Um dos Nove </strong> : Khamûl recebeu um dos Nove Anéis
+              dados aos homens, que concediam poder e longevidade, mas os
+              tornavam escravos da vontade de Sauron.
+            </p>
+            <p>
+              <strong> Servidão eterna </strong> : Como Nazgûl, sua existência
+              estava ligada ao Um Anel e à sobrevivência de Sauron. Com a
+              destruição do Anel, Khamûl e os outros Nazgûl foram finalmente
+              derrotados. Fontes: - Valinor – Khamûl - Wikipédia – Nazgûl Se
+              quiser, posso seguir com outros Nazgûl, como o Rei Bruxo, ou
+              explorar mais sobre Dol Guldur e Rhûn!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member12">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member12')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Thrór_modal.jpg"
+            alt="Thrór"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Thrór</h2>
+          <p class="modal__role">
+            Após a invasão de Smaug, Thrór vagou pela Terra-média, empobrecido e
+            desonrado. Em um ato de orgulho, entrou sozinho nas ruínas de Moria,
+            onde foi morto por Azog, o orc que decapitou seu corpo e zombou dos
+            anões.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong>Consequências de sua morte</strong>: A morte de Thrór
+              provocou a Guerra entre Anões e Orcs, um conflito sangrento que
+              culminou na Batalha de Azanulbizar. Embora os anões tenham
+              vencido, eles não retomaram Moria, e a perda de Thrór marcou o fim
+              de uma era.
+            </p>
+            <p>
+              <strong>Portador de um dos Sete Anéis dos Anões</strong>: Thrór
+              possuía um dos Sete Anéis dados por Sauron aos reis anões. Embora
+              os anões fossem mais resistentes à corrupção, o Anel intensificava
+              sua ganância por ouro e poder
+            </p>
+            <p>
+              <strong>Destino do Anel</strong>: Após sua morte, o Anel foi
+              passado a Thráin II, que mais tarde o perdeu para Sauron em Dol
+              Guldur.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="member13">
+        <div class="modal__content">
+          <button class="modal__close" onclick="closeModal('member13')">
+            &times;
+          </button>
+          <img
+            src="./dist/images/lightbox/Thráin_II_modal.jpg"
+            alt="Thráin II"
+            class="modal__image"
+          />
+          <h2 class="modal__name">Thráin II</h2>
+          <p class="modal__role">
+            Após a guerra, Thráin levou seu povo para o exílio nas Colinas de
+            Ferro e depois para o sul. Em 2841, partiu sozinho em uma missão
+            para recuperar Erebor, mas desapareceu misteriosamente. Foi
+            capturado por Sauron em Dol Guldur, onde foi torturado e morreu.
+            Antes de sua morte, encontrou Gandalf e lhe confiou a chave e o mapa
+            de Erebor — itens que mais tarde seriam entregues a Thorin e usados
+            na jornada de O Hobbit.
+          </p>
+          <div class="modal__description">
+            <p>
+              <strong> Importância narrativa </strong>: Sua desaparecimento e
+              legado são fundamentais para os eventos de O Hobbit, pois motivam
+              Thorin a buscar a reconquista de Erebor.
+            </p>
+            <p>
+              <strong>Portador de um dos Sete Anéis dos Anões</strong>: Herdou o
+              Anel de seu pai, Thrór. Embora os anões fossem resistentes à
+              corrupção, o Anel intensificava sua obsessão por ouro e poder.
+            </p>
+            <p>
+              <strong>Destino do Anel</strong>: O Anel foi tomado por Sauron em
+              Dol Guldur, encerrando a linhagem direta de portadores entre os
+              anões.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="heroes" id="heroes">
+      <div class="heroes__content">
+        <h2 class="heroes__content-title">Heróis</h2>
+        <p class="heroes__content-description">
+          Conheça alguns dos personagens mais icônicos da literatura, que
+          infelizmente não apareceram nas telas.
+        </p>
+
+        <div class="heroes__grid">
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Tom_Bombadil.jpg"
+                  alt="Tom Bombadil"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Tom Bombadil</h3>
+                <p class="heroes__description">
+                  Ser misterioso e eterno que vive na Floresta Velha. Imune ao
+                  poder do Um Anel, salva os hobbits de perigos no início de A
+                  Sociedade do Anel.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Goldberry.jpg"
+                  alt="Fruta Dourada (Goldberry)"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Fruta Dourada (Goldberry)</h3>
+                <p class="heroes__description">
+                  Esposa de Tom Bombadil, conhecida como a “Filha do Rio”. É
+                  etérea e profundamente ligada à natureza.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Glorfindel.jpg"
+                  alt="Glorfindel"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Glorfindel</h3>
+                <p class="heroes__description">
+                  Poderoso elfo de Valfenda que ajuda Frodo após o ataque dos
+                  Nazgûl. Seu papel é substituído por Arwen nos filmes
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Ghân-buri-Ghân.jpg"
+                  alt="Ghân-buri-Ghân"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Ghân-buri-Ghân</h3>
+                <p class="heroes__description">
+                  Líder dos Drúedain (ou Woses), povo da floresta que ajuda os
+                  Rohirrim a chegar a Minas Tirith.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Erkenbrand.jpg"
+                  alt="Hero 2"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Erkenbrand</h3>
+                <p class="heroes__description">
+                  Comandante de Rohan que lidera reforços para o Abismo de Helm
+                  nos livros. Nos filmes, esse papel é dado a Éomer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Barrow-wights.jpg"
+                  alt="Os Espectros dos Túmulos (Barrow-wights)"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">
+                  Os Espectros dos Túmulos (Barrow-wights)
+                </h3>
+                <p class="heroes__description">
+                  Espíritos malignos que capturam os hobbits nos Túmulos dos
+                  Reis. São resgatados por Tom Bombadil.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Fredegar_Gordo_Bolger.jpg"
+                  alt="Fredegar “Gordo” Bolger"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Fredegar “Gordo” Bolger</h3>
+                <p class="heroes__description">
+                  Amigo dos hobbits que fica no Condado para encobrir a fuga
+                  deles.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Elladan_Elrohir.jpg"
+                  alt="Elladan e Elrohir"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Elladan e Elrohir</h3>
+                <p class="heroes__description">
+                  Filhos gêmeos de Elrond que ajudam Aragorn e lutam na Guerra
+                  do Anel. Mencionados brevemente, mas não aparecem nos filmes
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Imrahil_Príncipe_de_Dol_Amroth.jpg"
+                  alt="Imrahil, Príncipe de Dol Amroth"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Imrahil, Príncipe de Dol Amroth</h3>
+                <p class="heroes__description">
+                  Nobre de Gondor que desempenha papel importante na defesa de
+                  Minas Tirith.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/roac_o_corvo.jpg"
+                  alt="Roäc, o Corvo"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Roäc, o Corvo</h3>
+                <p class="heroes__description">
+                  Corvo falante que informa Thorin sobre a aproximação de Dáin e
+                  aconselha paz.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Beregond_Bergil.jpg"
+                  alt="Beregond and Bergil"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Beregond e Bergil</h3>
+                <p class="heroes__description">
+                  Um soldado da Guarda da Cidadela em Minas Tirith e seu filho
+                  pequeno, Beregond, tornam-se amigos leais de Pippin e ajudam a
+                  salvar Faramir da loucura de Denethor.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="/dist/images/flip_card/the_grey_company.jpg"
+                  alt="The Grey Company"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">The Grey Company</h3>
+                <p class="heroes__description">
+                  Um grupo de Patrulheiros Dúnedain do Norte, incluindo os
+                  filhos de Elrond, Elladan e Elrohir, que atendem ao pedido de
+                  ajuda de Aragorn e se juntam a ele nas Sendas dos Mortos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Gildor_Inglorion.jpg"
+                  alt="Gildor Inglorion"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Gildor Inglorion</h3>
+                <p class="heroes__description">
+                  Um elfo que Frodo e seus companheiros encontram no Condado
+                  antes de chegarem a Bree. Ele avisa Frodo sobre os Nazgûl e o
+                  encoraja em sua jornada.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Quickbeam.jpg"
+                  alt="Quickbeam"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">Quickbeam</h3>
+                <p class="heroes__description">
+                  Um jovem Ent "apressado" que se junta a Barbárvore e os outros
+                  na marcha contra Isengard.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="heroes__card">
+            <div class="heroes__card-inner">
+              <div class="heroes__card-front">
+                <img
+                  src="./dist/images/flip_card/Lotho_and_Lobelia_SackvilleBaggins.jpg"
+                  alt="Lotho and Lobelia Sackville-Baggins"
+                  class="heroes__image"
+                />
+              </div>
+              <div class="heroes__card-back">
+                <h3 class="heroes__title">
+                  Lotho and Lobelia Sackville-Baggins
+                </h3>
+                <p class="heroes__description">
+                  são dois personagens secundários, mas memoráveis, do
+                  legendarium de J.R.R. Tolkien. Eles representam uma faceta
+                  mais mundana e satírica da sociedade hobbit — a ganância, a
+                  inveja e o desejo de status.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <!-- Language Selector -->
+      <div class="footer__section footer__section--languages">
+        <button class="footer__button" id="lang-toggle">Languages ▾</button>
+        <div class="footer__dropdown" id="lang-dropdown">
+          <button class="footer__language">English</button>
+          <button class="footer__language">Mandarin</button>
+          <button class="footer__language">Hindi</button>
+          <button class="footer__language">Spanish</button>
+          <button class="footer__language">French</button>
+          <button class="footer__language">Arabic</button>
+          <button class="footer__language">Bengali</button>
+          <button class="footer__language">Portuguese</button>
+          <button class="footer__language">Russian</button>
+          <button class="footer__language">Urdu</button>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="footer__section footer__section--social">
+        <a
+          href="https://www.instagram.com/mrmarcelorocha/"
+          class="footer__icon"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://x.com/moferapontotxt"
+          class="footer__icon"
+          aria-label="X (Twitter)"
+        >
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a
+          href="https://github.com/moferaisreal"
+          class="footer__icon"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer__section footer__section--contact">
+        <button class="footer__contact-btn">Contact Us</button>
+      </div>
+    </footer>
+
+    <button class="backToTop" id="backToTop">↑ Topo</button>
+    <script src="./dist/js/script.js"></script>
+  </body>
+</html>

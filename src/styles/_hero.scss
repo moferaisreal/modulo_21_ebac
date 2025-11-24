@@ -1,0 +1,201 @@
+@use "vars";
+
+.hero {
+  min-height: 100vh;
+  margin-top: 0;
+  background-image: url("../images/bg/bg_hero_desktop.jpg");
+  padding: var(--space-xl) var(--space-l-xl); // Simplified padding
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: vars.$mainText;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: var(--space-l) var(--space-s);
+  }
+
+  @media (max-width: 480px) {
+    background-image: url("../images/bg/bg_hero_mobile.jpg");
+    padding: var(--space-m) var(--space-xs);
+  }
+
+  // Direct child of .hero
+  &__content {
+    max-width: 40em;
+    padding-top: var(--space-xl); // Single padding-top
+    margin-bottom: var(--space-l);
+
+    @media (max-width: 768px) {
+      padding-top: var(--space-l);
+      margin-bottom: var(--space-m);
+    }
+  }
+
+  // Separate element, not nested under __content
+  &__content-branding {
+    margin-bottom: var(--space-m);
+
+    img {
+      max-height: 200px;
+      width: auto;
+      display: block;
+
+      @media (max-width: 480px) {
+        max-height: 100px;
+      }
+    }
+  }
+
+  // Direct child of .hero__content
+  h2 {
+    font-family: vars.$heading;
+    font-size: var(--font-3);
+    color: vars.$headerHover;
+    margin-bottom: var(--space-s);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  // Direct child of .hero__content
+  p {
+    color: vars.$headerText;
+    font-weight: bold;
+    margin-bottom: var(--space-s);
+  }
+
+  // Direct child of .hero (same level as __content)
+  &__list {
+    display: flex;
+    justify-content: flex-start; // Fixed from space-between
+    align-items: stretch;
+    margin: 0;
+    gap: var(--space-s-m);
+    padding: var(--space-s-l) var(--space-xs-s);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-s-m);
+      padding: var(--space-s) var(--space-2xs);
+    }
+  }
+
+  // Direct child of .hero__list
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: clamp(200px, 25vw, 300px);
+    max-width: clamp(250px, 30vw, 350px);
+    padding: var(--space-s);
+    min-height: clamp(180px, 25vh, 250px);
+    padding: var(--space-s-m);
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: vars.$headerHover;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      min-height: 180px;
+      width: 100%;
+      max-width: 300px;
+
+      &:not(:last-child) {
+        margin-bottom: var(--space-s);
+      }
+    }
+
+    img {
+      max-height: 100px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: var(--space-s);
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+
+      @media (max-width: 768px) {
+        max-height: 80px;
+      }
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  // Button styling for hero section
+  &__button {
+    // Base styles using vars
+    width: 100%;
+    max-width: 250px;
+    min-width: 180px;
+    min-height: 50px;
+    padding: var(--space-xs) var(--space-m);
+
+    // Typography using vars
+    font-family: vars.$heading;
+    font-size: var(--font-0);
+    color: vars.$headerText;
+
+    // Styling using vars
+    background: transparent;
+    border: var(--space-3xs) solid vars.$headerHover;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+
+    // Large screens - using fluid spacing vars
+    @media (min-width: 1200px) {
+      width: auto;
+      min-width: 200px;
+      padding: var(--space-xs) var(--space-l);
+      font-size: var(--font-0);
+    }
+
+    // Tablet - using responsive vars
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 280px;
+      min-height: 45px;
+      font-size: var(--font--1);
+      padding: var(--space-xs) var(--space-s);
+    }
+
+    // Mobile - using smallest vars
+    @media (max-width: 480px) {
+      width: 100%;
+      max-width: none;
+      min-width: unset;
+      min-height: 44px;
+      font-size: var(--font--2);
+      padding: var(--space-2xs) var(--space-xs);
+    }
+
+    // Hover state using vars colors
+    &:hover {
+      background: vars.$headerHover;
+      color: vars.$headerBg;
+      border-color: vars.$headerText;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    // Active state
+    &:active {
+      transform: translateY(0);
+      background: vars.$headerHover;
+    }
+
+    // Focus state for accessibility
+    &:focus {
+      outline: 2px solid vars.$headerHover;
+      outline-offset: 2px;
+    }
+  }
+}

@@ -11,12 +11,11 @@ const paths = {
   styles: "./src/styles/**/*.scss",
   scripts: "./src/js/**/*.js",
   images: "./src/images/**/*.{jpg,jpeg,png,gif,svg}",
-  static: ["./*.html", "./*.json", "./*.txt", "./*.ico", "./*.webmanifest"], // adjust as needed
+  html: "./src/**/*.html", // 👈 Add this line
   dest: {
     css: "./dist/css",
     js: "./dist/js",
     images: "./dist/images",
-    root: "./dist",
   },
 };
 
@@ -85,15 +84,16 @@ function images() {
     .on("end", () => console.log("Imagens otimizadas!"));
 }
 
-function copyStatic() {
-  return gulp.src(paths.static).pipe(gulp.dest(paths.dest.root));
+// 👈 ADD THIS NEW TASK
+function copyHTML() {
+  return gulp.src(paths.html).pipe(gulp.dest("./dist"));
 }
 
 function watchFiles() {
   gulp.watch(paths.styles, styles);
   gulp.watch(paths.scripts, minifyJS);
   gulp.watch(paths.images, images);
-  gulp.watch(paths.static, copyStatic);
+  gulp.watch(paths.html, copyHTML); // 👈 Add this line
   console.log("Assistindo alterações...");
 }
 
@@ -103,12 +103,13 @@ exports.scripts = scripts;
 exports.minify = minifyJS;
 exports.bundle = bundleJS;
 exports.images = images;
-exports.copy = copyStatic;
+exports.copyHTML = copyHTML; // 👈 Add this
 exports.watch = watchFiles;
 
 // --- BUILDS ---
-gulp.task("build", gulp.parallel(styles, minifyJS, images, copyStatic));
-gulp.task("build-bundle", gulp.parallel(styles, bundleJS, images, copyStatic));
-gulp.task("build-dev", gulp.parallel(styles, scripts, images, copyStatic));
+// 👈 Update all build tasks to include copyHTML
+gulp.task("build", gulp.parallel(styles, minifyJS, images, copyHTML));
+gulp.task("build-bundle", gulp.parallel(styles, bundleJS, images, copyHTML));
+gulp.task("build-dev", gulp.parallel(styles, scripts, images, copyHTML));
 gulp.task("dev", gulp.series("build-dev", watchFiles));
 gulp.task("default", gulp.series("build"));

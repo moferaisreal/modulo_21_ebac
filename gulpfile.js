@@ -54,10 +54,6 @@ function bundleJS() {
 }
 
 function images() {
-  if (process.env.VERCEL) {
-    console.log("Vercel detected - copying images without optimization");
-    return gulp.src(paths.images).pipe(gulp.dest(paths.dest.images));
-  }
   console.log("Otimizando imagens...");
   return gulp
     .src(paths.images)

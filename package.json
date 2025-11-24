@@ -7,15 +7,19 @@
     "build-bundle": " gulp build-bundle",
     "dev": " gulp dev"
   },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.54.4",
+    "gulp-imagemin": "^8.0.0",
     "gulp-uglify": "^3.0.2",
-    "sass": "^1.77.0",
-    "uglify-js": "^3.19.0"
+    "gulp-concat": "^2.6.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sourcemaps": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

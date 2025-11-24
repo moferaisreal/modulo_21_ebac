@@ -67,7 +67,9 @@ function images() {
           }),
         ],
         {
-          verbose: true,
+          verbose: false,
+          concurrent: 2,
+          silent: true,
         }
       )
     )

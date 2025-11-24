@@ -57,12 +57,11 @@ function bundleJS() {
 function images() {
   console.log("Otimizando imagens...");
 
-  // Skip image optimization on Vercel to avoid EPIPE errors
-  if (process.env.VERCEL || process.env.NODE_ENV === "production") {
+  /*  if (process.env.VERCEL || process.env.NODE_ENV === "production") {
     console.log("Ambiente Vercel detectado - copiando imagens sem otimização");
     return gulp.src(paths.images).pipe(gulp.dest(paths.dest.images));
   }
-
+ */
   console.log("Ambiente local - otimizando imagens...");
   return gulp
     .src(paths.images)

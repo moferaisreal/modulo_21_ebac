@@ -11,7 +11,7 @@ const paths = {
   styles: "./src/styles/**/*.scss",
   scripts: "./src/js/**/*.js",
   images: "./src/images/**/*.{jpg,jpeg,png,gif,svg}",
-  html: "./src/**/*.html", // 👈 Add this line
+  html: "./src/**/*.html",
   dest: {
     css: "./dist/css",
     js: "./dist/js",
@@ -84,7 +84,6 @@ function images() {
     .on("end", () => console.log("Imagens otimizadas!"));
 }
 
-// 👈 ADD THIS NEW TASK
 function copyHTML() {
   return gulp.src(paths.html).pipe(gulp.dest("./dist"));
 }
@@ -93,7 +92,7 @@ function watchFiles() {
   gulp.watch(paths.styles, styles);
   gulp.watch(paths.scripts, minifyJS);
   gulp.watch(paths.images, images);
-  gulp.watch(paths.html, copyHTML); // 👈 Add this line
+  gulp.watch(paths.html, copyHTML);
   console.log("Assistindo alterações...");
 }
 
@@ -103,11 +102,10 @@ exports.scripts = scripts;
 exports.minify = minifyJS;
 exports.bundle = bundleJS;
 exports.images = images;
-exports.copyHTML = copyHTML; // 👈 Add this
+exports.copyHTML = copyHTML;
 exports.watch = watchFiles;
 
 // --- BUILDS ---
-// 👈 Update all build tasks to include copyHTML
 gulp.task("build", gulp.parallel(styles, minifyJS, images, copyHTML));
 gulp.task("build-bundle", gulp.parallel(styles, bundleJS, images, copyHTML));
 gulp.task("build-dev", gulp.parallel(styles, scripts, images, copyHTML));

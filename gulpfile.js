@@ -11,10 +11,12 @@ const paths = {
   styles: "./src/styles/**/*.scss",
   scripts: "./src/js/**/*.js",
   images: "./src/images/**/*.{jpg,jpeg,png,gif,svg}",
+  static: ["./*.html", "./*.json", "./*.txt", "./*.ico", "./*.webmanifest"], // adjust as needed
   dest: {
     css: "./dist/css",
     js: "./dist/js",
     images: "./dist/images",
+    root: "./dist",
   },
 };
 
@@ -55,6 +57,14 @@ function bundleJS() {
 
 function images() {
   console.log("Otimizando imagens...");
+
+  // Skip image optimization on Vercel to avoid EPIPE errors
+  if (process.env.VERCEL || process.env.NODE_ENV === "production") {
+    console.log("Ambiente Vercel detectado - copiando imagens sem otimização");
+    return gulp.src(paths.images).pipe(gulp.dest(paths.dest.images));
+  }
+
+  console.log("Ambiente local - otimizando imagens...");
   return gulp
     .src(paths.images)
     .pipe(
@@ -67,8 +77,7 @@ function images() {
           }),
         ],
         {
-          verbose: false,
-          concurrent: 2,
+          verbose: true,
         }
       )
     )
@@ -76,10 +85,15 @@ function images() {
     .on("end", () => console.log("Imagens otimizadas!"));
 }
 
+function copyStatic() {
+  return gulp.src(paths.static).pipe(gulp.dest(paths.dest.root));
+}
+
 function watchFiles() {
   gulp.watch(paths.styles, styles);
   gulp.watch(paths.scripts, minifyJS);
   gulp.watch(paths.images, images);
+  gulp.watch(paths.static, copyStatic);
   console.log("Assistindo alterações...");
 }
 
@@ -89,11 +103,12 @@ exports.scripts = scripts;
 exports.minify = minifyJS;
 exports.bundle = bundleJS;
 exports.images = images;
+exports.copy = copyStatic;
 exports.watch = watchFiles;
 
 // --- BUILDS ---
-gulp.task("build", gulp.parallel(styles, minifyJS, images)); // Produção
-gulp.task("build-bundle", gulp.parallel(styles, bundleJS, images));
-gulp.task("build-dev", gulp.parallel(styles, scripts, images)); // Sem minify
+gulp.task("build", gulp.parallel(styles, minifyJS, images, copyStatic));
+gulp.task("build-bundle", gulp.parallel(styles, bundleJS, images, copyStatic));
+gulp.task("build-dev", gulp.parallel(styles, scripts, images, copyStatic));
 gulp.task("dev", gulp.series("build-dev", watchFiles));
 gulp.task("default", gulp.series("build"));

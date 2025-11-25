@@ -1,10 +1,18 @@
-const gulp = require("gulp");
-const sass = require("gulp-sass")(require("sass"));
-const imagemin = require("gulp-imagemin");
-const uglify = require("gulp-uglify");
-const concat = require("gulp-concat");
-const cleanCSS = require("gulp-clean-css");
-const sourcemaps = require("gulp-sourcemaps");
+import gulp from "gulp";
+import * as sass from "sass";
+import gulpSass from "gulp-sass";
+
+import imagemin from "gulp-imagemin";
+import imageminMozjpeg from "imagemin-mozjpeg";
+import imageminOptipng from "imagemin-optipng";
+import imageminSvgo from "imagemin-svgo";
+
+import uglify from "gulp-uglify";
+import concat from "gulp-concat";
+import cleanCSS from "gulp-clean-css";
+import sourcemaps from "gulp-sourcemaps";
+
+const sassCompiler = gulpSass(sass);
 
 // --- CONFIGURAÇÃO DE PASTAS ---
 const paths = {
@@ -21,21 +29,26 @@ const paths = {
 
 // --- TASKS ---
 
-function styles() {
+export function styles() {
   return gulp
     .src(paths.styles)
     .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(
+      sassCompiler({ outputStyle: "compressed" }).on(
+        "error",
+        sassCompiler.logError
+      )
+    )
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(sourcemaps.write("./maps"))
     .pipe(gulp.dest(paths.dest.css));
 }
 
-function scripts() {
+export function scripts() {
   return gulp.src(paths.scripts).pipe(gulp.dest(paths.dest.js));
 }
 
-function minifyJS() {
+export function minifyJS() {
   return gulp
     .src(paths.scripts)
     .pipe(sourcemaps.init())
@@ -44,7 +57,7 @@ function minifyJS() {
     .pipe(gulp.dest(paths.dest.js));
 }
 
-function bundleJS() {
+export function bundleJS() {
   return gulp
     .src(paths.scripts)
     .pipe(sourcemaps.init())
@@ -54,40 +67,31 @@ function bundleJS() {
     .pipe(gulp.dest(paths.dest.js));
 }
 
-function images() {
+export function images() {
   console.log("Otimizando imagens...");
-
-  /*  if (process.env.VERCEL || process.env.NODE_ENV === "production") {
-    console.log("Ambiente Vercel detectado - copiando imagens sem otimização");
-    return gulp.src(paths.images).pipe(gulp.dest(paths.dest.images));
-  }
- */
   console.log("Ambiente local - otimizando imagens...");
+
   return gulp
-    .src(paths.images)
+    .src(paths.images, { allowEmpty: true })
     .pipe(
       imagemin(
         [
-          imagemin.mozjpeg({ quality: 80, progressive: true }),
-          imagemin.optipng({ optimizationLevel: 5 }),
-          imagemin.svgo({
-            plugins: [{ name: "cleanupIDs", active: false }],
-          }),
+          imageminMozjpeg({ quality: 80, progressive: true }),
+          imageminOptipng({ optimizationLevel: 5 }),
+          imageminSvgo(),
         ],
-        {
-          verbose: true,
-        }
+        { verbose: true }
       )
     )
     .pipe(gulp.dest(paths.dest.images))
     .on("end", () => console.log("Imagens otimizadas!"));
 }
 
-function copyHTML() {
+export function copyHTML() {
   return gulp.src(paths.html).pipe(gulp.dest("./dist"));
 }
 
-function watchFiles() {
+export function watchFiles() {
   gulp.watch(paths.styles, styles);
   gulp.watch(paths.scripts, minifyJS);
   gulp.watch(paths.images, images);
@@ -95,16 +99,7 @@ function watchFiles() {
   console.log("Assistindo alterações...");
 }
 
-// --- EXPORTA TASKS ---
-exports.styles = styles;
-exports.scripts = scripts;
-exports.minify = minifyJS;
-exports.bundle = bundleJS;
-exports.images = images;
-exports.copyHTML = copyHTML;
-exports.watch = watchFiles;
-
-// --- BUILDS ---
+// --- BUILD TASKS ---
 gulp.task("build", gulp.parallel(styles, minifyJS, images, copyHTML));
 gulp.task("build-bundle", gulp.parallel(styles, bundleJS, images, copyHTML));
 gulp.task("build-dev", gulp.parallel(styles, scripts, images, copyHTML));

@@ -11,6 +11,7 @@ import uglify from "gulp-uglify";
 import concat from "gulp-concat";
 import cleanCSS from "gulp-clean-css";
 import sourcemaps from "gulp-sourcemaps";
+import rename from "gulp-rename";
 
 const sassCompiler = gulpSass(sass);
 
@@ -82,6 +83,13 @@ export function images() {
         ],
         { verbose: true }
       )
+    )
+    .pipe(
+      rename(function (path) {
+        path.dirname = path.dirname.toLowerCase();
+        path.basename = path.basename.toLowerCase();
+        path.extname = path.extname.toLowerCase();
+      })
     )
     .pipe(gulp.dest(paths.dest.images))
     .on("end", () => console.log("Imagens otimizadas!"));
